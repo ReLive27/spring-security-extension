@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 // 其他配置...
-                .addFilterBefore(captchaAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .apply(new CaptchaAuthenticationConfigurer());
     }
 }
 
